@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#0b1a24" />
+    <meta name="description" content="ECA Changeover Pilot - SOx & NOx regulatory advisor and fuel changeover timing assistant." />
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <link rel="icon" type="image/svg+xml" href="./icon.svg" />
+    <link rel="apple-touch-icon" href="./icon-192.png" />
+    <title>ECA Changeover Pilot</title>
+    <link rel="stylesheet" href="./assets/app.css" />
+  </head>
+  <body>
+    <div id="root"><p id="boot-msg" style="font-family:system-ui,sans-serif;color:#9fb3c0;padding:24px">Loading ECA Changeover Pilot&hellip;</p></div>
+    <script>
+      (function () {
+        function show(t) {
+          var el = document.getElementById("boot-msg");
+          if (el) { el.style.color = "#ffb4a8"; el.textContent = t; }
+        }
+        if (location.protocol === "file:") {
+          show("This app cannot run from a file. Open it through GitHub Pages (https) or a local server: python -m http.server 8000");
+        }
+        window.addEventListener("error", function (e) {
+          show("Startup error: " + (e && e.message ? e.message : "failed to load assets/app.js") + " - try a hard refresh (Ctrl+Shift+R) and clear site data.");
+        }, true);
+      })();
+    </script>
+    <script type="module" src="./assets/app.js"></script>
+  </body>
+</html>
